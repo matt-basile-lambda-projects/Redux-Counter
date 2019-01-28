@@ -10,7 +10,7 @@ class Counter extends Component {
         if(this.props.count%2 === 0){
             return
         } else{
-            this.props.increment(1)
+            this.props.increment(this.props.count)
         }
     };
 
@@ -18,7 +18,7 @@ class Counter extends Component {
         // Stretch Problem: Implement an increment function that
         // increments after waiting for one second
         setTimeout(()=>{
-            this.props.increment(1);
+            this.props.increment(this.props.count);
         }, 1000)
     };
    
@@ -30,10 +30,10 @@ class Counter extends Component {
         return (
             <p>
                 Clicked: {this.props.count} times
-                <button onClick={() => {this.props.increment(1)} }>
+                <button onClick={() => {this.props.increment(this.props.count)} }>
                     +
                 </button>
-                <button onClick={() => {this.props.decrement(1)} }>
+                <button onClick={() => {this.props.decrement(this.props.count)} }>
                     -
                 </button>
                   <button onClick={this.incrementIfOdd}>
